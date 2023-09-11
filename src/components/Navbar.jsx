@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import backgroundImage from '../images/heropic.png'
+
 const navigation = [
   { name: 'Benefits', href: '#' },
   { name: 'Pricing', href: '#' },
