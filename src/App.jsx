@@ -17,9 +17,9 @@ export default function App() {
       <SellingPoint/>
       <HowToUse/>
       <WhyToUse/>
+      <Pricing/>
       <FAQ/>
       <Logos/>
-      <Pricing/>
       <Contact/>
     </div>
 

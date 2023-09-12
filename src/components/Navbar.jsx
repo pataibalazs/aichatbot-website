@@ -2,13 +2,12 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-import backgroundImage from '../images/heropic.png'
 
 const navigation = [
-  { name: 'Benefits', href: '#' },
-  { name: 'Pricing', href: '#' },
+  { name: 'Benefits', href: '#benefits' },
   { name: 'Usage', href: '#' },
   { name: 'Features', href: '#' },
+  { name: 'Pricing', href: '#' },
   { name: 'FAQs', href: '#' },
   { name: 'Contact', href: '#' },
 ]
@@ -18,7 +17,7 @@ export function Navbar() {
 
   return (
     <header className="bg-white">
-    <nav className="mx-auto flex max-w-7xl items-center p-6 lg:px-8" aria-label="Global">
+    <nav className="mx-auto flex max-w-7xl items-center p-6 lg:px-8 z-400000000" aria-label="Global">
       <div className="flex items-center">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
@@ -46,7 +45,7 @@ export function Navbar() {
       </div>
     </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-10" />
+        <div className="" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
