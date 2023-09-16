@@ -1,27 +1,28 @@
-import { CloudArrowUpIcon, CheckCircleIcon,DocumentPlusIcon } from '@heroicons/react/20/solid'
+import { CheckBadgeIcon, CpuChipIcon,DocumentPlusIcon } from '@heroicons/react/20/solid'
 
 const features = [
   {
-    name: 'Login',
+    name: 'Add to your website',
     description:
-      'We have built a website specificly for our customers, where they can feed the AI with information.',
+      'After you added some documents your AI will be instantly trained, and will know all the details.',
     href: '#',
-    icon: CloudArrowUpIcon,
+    icon: CpuChipIcon,
   },
   {
     name: 'Add documents',
     description:
-      'Enter any information in pdf format that you want the AI to know. You can extend this any time.',
+      'We have built a website specificly for our customers, where they can feed the AI via PDFs, or just pasting your website URL!',
     href: '#',
     icon: DocumentPlusIcon,
   },
   {
-    name: 'Enjoy',
+    name: 'Enjoy!',
     description:
-      'After you added some documents your AI will be instantly trained, and will know all the details.',
+      'Self-explainatory.',
     href: '#',
-    icon: CheckCircleIcon,
-  },
+    icon: CheckBadgeIcon,
+  }
+
 ]
 
 export function HowToUse() {
@@ -29,16 +30,16 @@ export function HowToUse() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-pageColors-1 sm:text-6xl">
             How to use
-          </p>
+          </h1>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
+              <div key={feature.name} className="flex flex-col items-center border-black border-2 rounded-xl w-12/12 p-10">
                 <dt className="flex flex-col items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <feature.icon className="h-14 w-14 flex-none text-indigo-600" aria-hidden="true" />
+                  <feature.icon className="h-14 w-14 flex-none text-pageColors-3" aria-hidden="true" />
                   {feature.name}
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">

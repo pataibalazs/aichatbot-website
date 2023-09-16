@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import backgroundImage from '../images/logo_yellow_black.png'
 
 
 const navigation = [
@@ -17,12 +18,12 @@ export function Navbar() {
 
   return (
     <header className="bg-pageColors-2">
-      <nav className="mx-auto flex max-w-7xl items-center p-6 lg:px-8 z-400000000" aria-label="Global">
-        <div className="flex items-center">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-          </a>
+      <nav className="mx-auto flex max-w-7xl items-center px-6 pt-6 lg:px-8 z-400000000" aria-label="Global">
+        <div>
+        <img className="rounded-3xl w-auto h-20"
+            src={backgroundImage}
+            alt=""
+          />
         </div>
         <div className="flex-grow lg:flex lg:items-center lg:justify-center">
           <div className="hidden lg:flex lg:gap-x-12">
