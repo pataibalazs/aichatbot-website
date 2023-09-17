@@ -10,16 +10,19 @@ import { FAQ } from './components/FAQ';
 import { Pricing } from './components/Pricing';
 
 export default function App() {
+  
   return (
-    <div>  
+    <div>
+      <div className="animation-on-hero">
       <Navbar/>
       <Hero/>
+      </div>
+
       <SellingPoint/>
       <HowToUse/>
       <WhyToUse/>
       <Pricing/>
       <FAQ/>
-      <Logos/>
       <Contact/>
     </div>
 

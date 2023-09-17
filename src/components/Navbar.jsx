@@ -20,15 +20,15 @@ export function Navbar() {
     <header className="bg-pageColors-2">
       <nav className="mx-auto flex max-w-7xl items-center px-6 pt-6 lg:px-8 z-400000000" aria-label="Global">
         <div>
-        <img className="rounded-3xl w-auto h-20"
+        <img className="rounded-3xl w-auto h-16 transition ease-in-out hover:scale-110"
             src={backgroundImage}
             alt=""
           />
         </div>
         <div className="flex-grow lg:flex lg:items-center lg:justify-center">
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-14">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-base font-semibold leading-6 text-pageColors-1">
+              <a key={item.name} href={item.href} className="text-base font-semibold leading-6 text-pageColors-1 transition ease-in-out hover:text-gray-500 hover:scale-110">
                 {item.name}
               </a>
             ))}
@@ -37,7 +37,7 @@ export function Navbar() {
         <div className="flex items-center">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 lg:hidden"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-red-700 lg:hidden"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
