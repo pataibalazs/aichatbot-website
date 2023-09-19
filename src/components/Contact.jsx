@@ -5,43 +5,18 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export function Contact() {
-  const [agreed, setAgreed] = useState(false)
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    // Clean up on component unmount
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
+export function Contact({refProp}) {
   return (
-    <div className="bg-white px-6 py-24 sm:py-32 lg:px-8">
-      <div className="bg-pageColors-2 rounded-3xl m-10 p-10 animation" ref={sectionRef}>
+    <div className="bg-white py-12 sm:py-8 flex justify-center">
+      <div className="max-w-7xl px-6 lg:px-8 hatter-2 py-28 rounded-3xl p-10 sm:mx-20 m-6 lg:px-80" ref={refProp}>
         <div
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
           aria-hidden="true"
         >
 
         </div>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-pageColors-1 sm:text-4xl">Contact us</h2>
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl sm:text-6xl mb-10 font-bold tracking-tight text-pageColors-1">Contact us</h2>
           <p className="mt-2 text-lg leading-8 text-pageColors-1">
             If you have any questions, feel free to contact us about our products.
           </p>

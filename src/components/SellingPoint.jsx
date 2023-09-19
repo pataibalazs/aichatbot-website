@@ -2,36 +2,13 @@ import backgroundImage from '../images/paying_with_card.jpg'
 import React, { useEffect, useRef } from 'react';
 
 
-export function SellingPoint() {
-  const sectionRef = useRef(null);
+export function SellingPoint({ refProp }) {
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    // Clean up on component unmount
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
   return (
-    <div className="bg-white py-24 sm:py-16">
-      <div className="bg-pageColors-1 mx-20 my-10 rounded-3xl animation" ref={sectionRef}>
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="mx-auto flex max-w-2xl flex-col gap-10 pl-6 py-16 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:pl-10">
-
+    <div className="bg-white py-12 sm:py-8 flex justify-center">
+      <div className="max-w-7xl bg-pageColors-1 p-10 sm:mx-20 m-6 rounded-3xl" >
+        <div className="mx-auto max-w-7xl xxs:px-6 lg:px-8">
+          <div className="mx-auto flex xxs:max-w-4xl sm:max-w-2xl flex-col gap-10 lg:pl-6 py-16 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:pl-10" ref={refProp}>
             <div className="w-full flex-auto">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl mb-10">Reduce costs by 10000x</h2>
               <h2 className="text-xl font-bold tracking-tight text-white sm:text-3xl text-opacity-30 mb-10">Yes literally 10000x.</h2>
@@ -42,7 +19,7 @@ export function SellingPoint() {
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-3xl mb-10">We charge 0.0002$</h2>
             </div>
             <img
-                className="h-96 rounded-3xl w-full flex-none object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-lg"
+                className="h-96 rounded-3xl w-full flex-none object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-md xl:max-w-lg"
                 src={backgroundImage}
                 alt=""
               />

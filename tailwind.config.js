@@ -13,7 +13,10 @@ module.exports = {
           4: '#ffffff',
           5: '#f2a74c',
         },
-      }
+      },
+      screens: {
+        'xxs': '300px',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import backgroundImage from '../images/logo_yellow_black.png'
+import { useRef } from 'react'
 
 
 const navigation = [
@@ -13,14 +14,35 @@ const navigation = [
   { name: 'Contact', href: '#' },
 ]
 
-export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+export function Navbar({
+  scrollToSellingPoint,
+  scrollToHowToUse,
+  scrollToWhyToUse,
+  scrollToPricing,
+  scrollToFAQ,
+  scrollToContact,
+}) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // A mapping of section names to their scrollTo functions
+  const scrollFunctions = {
+    "Benefits": scrollToSellingPoint,
+    "Usage": scrollToHowToUse,
+    "Features": scrollToWhyToUse,
+    "Pricing": scrollToPricing,
+    "FAQs": scrollToFAQ,
+    "Contact": scrollToContact,
+  };
 
   return (
-    <header className="bg-pageColors-2">
-      <nav className="mx-auto flex max-w-7xl items-center px-6 pt-6 lg:px-8 z-400000000" aria-label="Global">
+    <header className="bg-[#ffd451] pb-2">
+      <nav
+        className="mx-auto flex max-w-7xl items-center px-6 pt-6 lg:px-8 z-400000000"
+        aria-label="Global"
+      >
         <div>
-        <img className="rounded-3xl w-auto h-16 transition ease-in-out hover:scale-110"
+          <img
+            className="rounded-3xl w-auto h-16 transition ease-in-out hover:scale-110"
             src={backgroundImage}
             alt=""
           />
@@ -28,9 +50,13 @@ export function Navbar() {
         <div className="flex-grow lg:flex lg:items-center lg:justify-center">
           <div className="hidden lg:flex lg:gap-x-14">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-base font-semibold leading-6 text-pageColors-1 transition ease-in-out hover:text-gray-500 hover:scale-110">
+              <button
+                key={item.name}
+                onClick={scrollFunctions[item.name]} // Here we use the appropriate function based on item name
+                className="text-lg font-semibold leading-6 text-pageColors-1 transition ease-in-out hover:text-gray-500 hover:scale-110"
+              >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -53,7 +79,7 @@ export function Navbar() {
               <span className="sr-only">Your Company</span>
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src={backgroundImage}
                 alt=""
               />
             </a>
@@ -69,23 +95,16 @@ export function Navbar() {
           <div className="mt-6 flow-root">
             <div className="">
               <div className="space-y-2 py-6">
+
                 {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+              <button
+                key={item.name}
+                onClick={scrollFunctions[item.name]} // Here we use the appropriate function based on item name
+                className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              >
+                {item.name}
+              </button>
+            ))}
               </div>
             </div>
           </div>

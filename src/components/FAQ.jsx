@@ -11,36 +11,14 @@ const faqs = [
   // More questions...
 ]
 
-export function FAQ() {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    // Clean up on component unmount
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+export function FAQ({refProp}) {
+  
   return (
-    <div className="bg-white">
-      <div className="max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 bg-pageColors-1 m-10 rounded-3xl animation" ref={sectionRef}>
+    <div className="bg-white py-12 sm:py-8 flex justify-center">
+      <div className="max-w-7xl lg:px-8 bg-pageColors-1 py-28 rounded-3xl p-10 sm:mx-20 m-6 lg:px-80" ref={refProp}>
         <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
           <div className="flex justify-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl mb-10">Frequently asked questions</h2>
+          <h2 className="text-3xl sm:text-6xl font-bold text-center tracking-tight text-white mb-10">Frequently asked questions</h2>
           </div>
 
           <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
