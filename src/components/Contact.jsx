@@ -8,7 +8,7 @@ function classNames(...classes) {
 export function Contact({refProp}) {
   return (
     <div className="bg-white py-12 sm:py-8 flex justify-center">
-      <div className="max-w-7xl px-6 lg:px-8 hatter-2 py-28 rounded-3xl p-10 sm:mx-20 m-6 lg:px-80" ref={refProp}>
+      <div className="max-w-7xl px-6 lg:px-8 hatter-2 py-28 rounded-3xl p-10 sm:mx-20 m-6 lg:px-40" ref={refProp}>
         <div
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
           aria-hidden="true"
@@ -21,7 +21,7 @@ export function Contact({refProp}) {
             If you have any questions, feel free to contact us about our products.
           </p>
         </div>
-        <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+        <form action="#" method="POST" className="mt-16 max-w-2xl px-10 sm:mt-20">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
               <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">

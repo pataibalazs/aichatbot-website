@@ -24,6 +24,8 @@ export function Navbar({
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+
+
   // A mapping of section names to their scrollTo functions
   const scrollFunctions = {
     "Benefits": scrollToSellingPoint,
@@ -63,7 +65,7 @@ export function Navbar({
         <div className="flex items-center">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-red-700 lg:hidden"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-pageColors-1 lg:hidden"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -97,14 +99,19 @@ export function Navbar({
               <div className="space-y-2 py-6">
 
                 {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={scrollFunctions[item.name]} // Here we use the appropriate function based on item name
-                className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-              >
-                {item.name}
-              </button>
-            ))}
+                  <button
+                    key={item.name}
+                    onClick={() => {
+                      if (scrollFunctions[item.name]) {
+                        scrollFunctions[item.name]();
+                      }
+                      setMobileMenuOpen(false);
+                    }}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
